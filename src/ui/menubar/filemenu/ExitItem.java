@@ -10,7 +10,7 @@ public class ExitItem extends MenuItem{
 		addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				ActionPerformFunction.ExitAction();
+				ActionPerformFunction.exitAction();
 			}
 		});
 	}

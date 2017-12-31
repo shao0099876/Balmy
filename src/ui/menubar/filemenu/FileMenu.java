@@ -10,7 +10,7 @@ public class FileMenu extends JMenu{
 		add(new OpenFileItem(face));
 		add(new SaveFileItem(face));
 		add(new SaveAsItem(face));
-		add(new SaveAllItem(face));
+		add(new SaveAllItem());
 		add(new CloseItem(face));
 		add(new ExitItem(face));
 	}

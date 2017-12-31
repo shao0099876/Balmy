@@ -59,25 +59,7 @@ public class ActionPerformFunction {
 		}
 	}
 	public static void closeAction(UserInterface face) {
-		if(face.getFilePath()!=null) {
-			try {
-				ToolsFunction.writeFile(face.getFilePath(),face.getTextArea());
-			}catch (IOException e1) {
-				e1.printStackTrace();
-			}
-		}
-		else{
-			FileChooser chooser=new FileChooser();
-			if(chooser.showSaveDialog(face)==JFileChooser.APPROVE_OPTION) {
-				try {
-					ToolsFunction.writeFile(chooser.getSelectedFile().getPath()+".balmy",face.getTextArea());
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
-				face.updateFilePath(chooser.getSelectedFile().getPath()+".balmy");
-				face.setTitle(chooser.getSelectedFile().getName());
-			}
-		}
+		saveFileAction(face);
 		ArrayList<UserInterface> window=Balmy.getWindow();
 		window.remove(face);
 		face.dispose();
@@ -87,8 +69,13 @@ public class ActionPerformFunction {
 		while(!window.isEmpty())
 			closeAction(window.get(0));
 	}
-	public static void ExitAction() {
+	public static void exitAction() {
 		closeAllAction();
 		System.exit(0);
+	}
+	public static void saveAllAction() {
+		ArrayList<UserInterface> window=Balmy.getWindow();
+		for(int i=0;i<window.size();i++)
+			saveFileAction(window.get(i));
 	}
 }
