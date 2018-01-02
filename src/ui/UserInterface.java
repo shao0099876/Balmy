@@ -1,9 +1,15 @@
 package ui;
 import java.awt.BorderLayout;
+import java.io.File;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+
 import tools.PublicConst;
 import ui.menubar.MenuBar;
 import ui.toolbar.ToolBar;
@@ -22,7 +28,6 @@ public class UserInterface extends JFrame{
 		mainFrame_north.add(BorderLayout.CENTER,new ToolBar(this));
 		mainFrame.add(BorderLayout.NORTH,mainFrame_north);
 		mainFrame.add(BorderLayout.CENTER,new JScrollPane(codeText));
-		mainFrame.add(BorderLayout.WEST,new TreeArea());
 		System.setOut(new GUIPrintStream(System.out,outputText));
 		mainFrame.add(BorderLayout.SOUTH, new JScrollPane(outputText));
 		setContentPane(mainFrame);
