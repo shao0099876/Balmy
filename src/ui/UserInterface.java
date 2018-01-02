@@ -1,15 +1,9 @@
 package ui;
 import java.awt.BorderLayout;
-import java.io.File;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTree;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-
 import tools.PublicConst;
 import ui.menubar.MenuBar;
 import ui.toolbar.ToolBar;
